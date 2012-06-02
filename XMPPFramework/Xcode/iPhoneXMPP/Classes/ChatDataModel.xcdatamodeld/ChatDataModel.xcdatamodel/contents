@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="MessageEntity" representedClassName="MessageEntity" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flag_readed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="flag_sended" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="sendDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="receiver" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PersonEntity" syncable="YES"/>
+        <relationship name="sender" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PersonEntity" syncable="YES"/>
+    </entity>
+    <entity name="PersonEntity" representedClassName="PersonEntity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="sendedMessages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MessageEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MessageEntity" positionX="187" positionY="-9" width="128" height="135"/>
+        <element name="PersonEntity" positionX="-117" positionY="192" width="128" height="75"/>
+    </elements>
+</model>
